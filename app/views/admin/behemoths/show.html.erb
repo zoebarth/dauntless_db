@@ -1,13 +1,11 @@
-</head>
-<body>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+</div>
 
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h3> Behemoth name: <%= @behemoth.name %> </h3>
+</div>
 
-<h3> Behemoth name: <%= @behemoth.name %> 
-</h3>
-
-<%= link_to 'Edit', edit_admin_behemoth_path(@behemoth) %> |
-<%= link_to 'Back', admin_behemoths_path %>
-
-</body>
-</html> 
+<div class="container">
+  <%= link_to 'Edit', edit_admin_behemoth_path(@behemoth) %> | <%= link_to 'Back', admin_behemoths_path %> 
+</div>

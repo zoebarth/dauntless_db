@@ -6,42 +6,38 @@ module Admin
     end
 
     def new
-    @behemoth = Behemoth.new
+      @behemoth = Behemoth.new
     end
 
     def create
       @behemoth= Behemoth.new(behemoth_params)
-      respond_to do |format|
       if @behemoth.save
-        format.html { redirect_to admin_behemoth_path(@behemoth), notice: "Behemoth was successfully created."}
+        redirect_to admin_behemoth_path(@behemoth), notice: "Behemoth was successfully created."
       else
-        format.html {render :new}
-      end
+        render :new
       end
     end
 
     def show 
-    set_behemoth
+      set_behemoth
     end
 
     def update
-    set_behemoth
-      respond_to do |format|
+      set_behemoth
       if @behemoth.update(behemoth_params)
-        format.html { redirect_to admin_behemoth_path(@behemoth), notice: "Behemoth was successfully updated."}
+        redirect_to admin_behemoth_path(@behemoth), notice: "Behemoth was successfully updated."
       else
         format.html {render :edit}
-      end
       end
     end
 
     def edit
-    set_behemoth
+      set_behemoth
     end
 
     private 
     def set_behemoth
-    @behemoth = Behemoth.find(params[:id])
+      @behemoth = Behemoth.find(params[:id])
     end
 
     def behemoth_params
