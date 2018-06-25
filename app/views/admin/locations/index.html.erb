@@ -1,0 +1,27 @@
+<h1>Welcome to the (Admin) Location Page</h1>
+<p>Here is the list of Location</p>
+<p>
+  <%= link_to 'New', new_admin_location_path %>
+</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  <% @locations.each do |a| %>
+    <tr>
+      <td>
+        <%= a.name %>
+      </td>
+      <td>
+        <%= link_to 'Show', admin_location_path(a) %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_admin_location_path(a) %>
+      </td>
+      <td>
+        <%= link_to 'Delete (for now will remove later)', admin_location_path(a), method: :delete, data: {confirm: "Delete #{a.name} for sure???"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
