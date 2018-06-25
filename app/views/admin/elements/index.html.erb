@@ -9,19 +9,19 @@
     <th></th>
   </tr>
   <% @elements.each do |a| %>
-    <tr>
-      <td>
-        <%= a.name %>
-      </td>
-      <td>
-        <%= link_to 'Show', admin_element_path(a) %>
-      </td>
-      <td>
-        <%= link_to 'Edit', edit_admin_element_path(a) %>
-      </td>
-      <td>
-        <%= link_to 'Delete (for now will remove later)', admin_element_path(a), method: :delete, data: {confirm: "Delete #{a.name} for sure???"} %>
-      </td>
-    </tr>
+  <tr>
+    <td>
+      <%= a.name %>
+    </td>
+    <td>
+      <%= link_to 'Show', admin_element_path(a) %>
+    </td>
+    <td>
+      <%= link_to 'Edit', edit_admin_element_path(a) %>
+    </td>
+    <td>
+      <%= link_to 'Delete (for now will remove later)', admin_element_path(a), method: :delete, data: {confirm: "Delete #{a.name} for sure???"} %>
+    </td>
+  </tr>
     <% end %>
 </table>

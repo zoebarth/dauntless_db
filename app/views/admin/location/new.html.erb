@@ -1,0 +1,10 @@
+<h1>New Location to add?</h1>
+<%= form_with scope: :location, url: admin_locations_path, local: true do |f| %>
+  <p>Name please:
+    <% f.label :name %>
+      <%= f.text_field :name %>
+  </p>
+  <p>
+    <%=f.submit%>
+  </p>
+  <% end %>

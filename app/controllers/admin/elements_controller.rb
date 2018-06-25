@@ -6,7 +6,7 @@ module Admin
   end
 
   def show
-    @element = Element.find(params[:id])
+   @element = Element.find(params[:id])
   end
 
   def new
@@ -25,9 +25,9 @@ module Admin
 
   def update
     @element = Element.find(params[:id])
-        if @element.update(admin_elements_params)
-          redirect_to admin_elements_path
-        end
+    if @element.update(admin_elements_params)
+    redirect_to admin_elements_path
+    end
   end
 
   def create

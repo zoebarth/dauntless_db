@@ -1,4 +1,5 @@
-class LocationController < ApplicationController
+module Admin
+  class LocationController < ApplicationController
   def index
     @locations = Location.all
   end
@@ -22,14 +23,10 @@ class LocationController < ApplicationController
   end
 
   def update
-    @location = Location.find(params[:id])
-    respond_to do |f|
-      f.html do 
+    @location = Location.find(params[:id]) 
         if @location.update(locations_params)
           redirect_to locations_path
         end
-      end
-    end
   end
 
   def create
@@ -43,5 +40,6 @@ class LocationController < ApplicationController
   def locations_params
     params.require(:location).permit(:name)
   end
-
+  
+  end
 end
