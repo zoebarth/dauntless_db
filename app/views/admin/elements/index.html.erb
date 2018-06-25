@@ -1,0 +1,27 @@
+<h1>Welcome to the (Admin) Element Page</h1>
+<p>Here is the list of Elements</p>
+<p>
+    <%= link_to 'New', new_admin_element_path %>
+</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    <% @elements.each do |a| %>
+        <tr>
+            <td>
+                <%= a.name %>
+            </td>
+            <td>
+                <%= link_to 'Show', admin_element_path(a) %>
+            </td>
+            <td>
+                <%= link_to 'Edit', edit_admin_element_path(a) %>
+            </td>
+            <td>
+                <%= link_to 'Delete (for now will remove later)', admin_element_path(a), method: :delete, data: {confirm: "Delete #{a.name} for sure???"} %>
+            </td>
+        </tr>
+        <% end %>
+</table>
