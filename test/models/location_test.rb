@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ElementTest < ActiveSupport::TestCase
+class LocationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
