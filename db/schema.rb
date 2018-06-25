@@ -24,4 +24,8 @@ ActiveRecord::Schema.define(version: 2018_06_25_210342) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "behemoths", force: :cascade do |t|
+    t.string "name"
+  end
+
 end

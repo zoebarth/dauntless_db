@@ -1,0 +1,2 @@
+class Behemoth < ApplicationRecord
+end
