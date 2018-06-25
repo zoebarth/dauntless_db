@@ -12,7 +12,7 @@ module Admin
     end
 
     def edit
-      @element = Location.find(params[:id])
+      @location = Location.find(params[:id])
     end
 
     def destroy
