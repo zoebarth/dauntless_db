@@ -23,7 +23,7 @@
 <div class="container">
   <h5> Location Found: </h5>
     <p>
-      <% if defined?(@behemoth.location.name) %> 
+      <% if @behemoth.location %> 
         <%= @behemoth.location.name %>
       <% else %>
         <%= 'unknown (not in the database)' %>
