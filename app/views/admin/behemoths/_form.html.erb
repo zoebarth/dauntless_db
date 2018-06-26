@@ -2,7 +2,6 @@
   <% if behemoth.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(behemoth.errors.count, "error") %> prohibited this behemoth from being saved:</h2>
-
       <ul>
         <%behemoth.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -13,10 +12,28 @@
 
   <div class="container">
     <div class="row justify-content-center">
-      <%= form.label(:name, 'Behemoth name:') %>
-      <%= form.text_field(:name) %>
+      <%= form.label(:name, 'Behemoth name: ') %>
+      <%= form.text_field(:name) %> 
     </div>
   </div>
+ 
+  <div class="container">
+    <div class="row justify-content-center">
+      <%= form.label(:damage_type, 'Elemental Damage: ') %>
+    </div>
+  </div>
+
+  <div class="checkbox">
+      <%= form.collection_check_boxes(:damage_type_ids, Element.all, :id, :name) %>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <%= form.label(:weakness_type, 'Elemental Weakness: ') %>
+    </div>
+  </div>
+
+  <%= form.collection_check_boxes(:weakness_type_ids, Element.all, :id, :name) %>
 
   <div class="actions">
     <%= form.submit %>

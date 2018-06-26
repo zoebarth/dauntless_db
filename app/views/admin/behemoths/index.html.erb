@@ -6,16 +6,15 @@
 
 <div class="container">
   <div class="row justify-content-center">
-  <h4> <%= link_to "Create new Behemoth", new_admin_behemoth_path %> </h4> 
+    <h4> <%= link_to "Create new Behemoth", new_admin_behemoth_path %> </h4>
   </div>
 </div>
 
- 
+
 <% @behemoths.each do |behemoth| %>
-  <div class="container">
-    <div class="row justify-content-center">
- 	    <p> <%= behemoth.name %> <%= link_to 'Edit', edit_admin_behemoth_path(behemoth) %> </p>
-    </div>
+ <div class="container">
+  <div class="row justify-content-center">
+    <p> <%= link_to behemoth.name, admin_behemoth_path(behemoth)%> </p>
   </div>
+ </div>
 <% end %>
- 
