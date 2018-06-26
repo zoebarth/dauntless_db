@@ -4,7 +4,7 @@
       <h2><%= pluralize(behemoth.errors.count, "error") %> prohibited this behemoth from being saved:</h2>
       <ul>
         <%behemoth.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li>Syed says: <%= message %></li>
         <% end %>
       </ul>
     </div>
@@ -34,6 +34,13 @@
   </div>
 
   <%= form.collection_check_boxes(:weakness_type_ids, Element.all, :id, :name) %>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <%= form.label 'Location' %>
+      <%= form.collection_select :location_id, Location.all, :id, :name, {},{ class: "custom-select" } %> <!-- might be location_id -->
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

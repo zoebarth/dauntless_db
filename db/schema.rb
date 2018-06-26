@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_25_223920) do
+ActiveRecord::Schema.define(version: 2018_06_26_213434) do
 
   create_table "behemoths", force: :cascade do |t|
     t.string "name"
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_behemoths_on_location_id"
   end
 
   create_table "elemental_damages", force: :cascade do |t|
@@ -28,10 +30,6 @@ ActiveRecord::Schema.define(version: 2018_06_25_223920) do
     t.integer "element_id"
     t.index ["behemoth_id"], name: "index_elemental_weaknesses_on_behemoth_id"
     t.index ["element_id"], name: "index_elemental_weaknesses_on_element_id"
-  end
-
-  create_table "behemoths", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "elements", force: :cascade do |t|

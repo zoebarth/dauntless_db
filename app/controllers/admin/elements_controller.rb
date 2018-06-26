@@ -26,7 +26,7 @@ module Admin
     def update
       @element = Element.find(params[:id])
       if @element.update(admin_elements_params)
-      redirect_to admin_elements_path
+        redirect_to admin_elements_path
       end
     end
 
