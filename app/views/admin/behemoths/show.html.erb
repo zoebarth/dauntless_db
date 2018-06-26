@@ -8,14 +8,14 @@
 
 <div class="container">
   <h5> Elemental Damage: </h5>
-  <% @behemoth.elemental_damages.each do |damage| %>
+  <% @behemoth.damage_types.each do |damage| %>
     <p> <%= damage.name %> </p>
   <% end %>
 </div>
 
 <div class="container">
   <h5> Elemental Weakness: </h5>
-  <% @behemoth.elemental_weaknesses.each do |weakness| %>
+  <% @behemoth.weakness_types.each do |weakness| %>
     <p> <%= weakness.name %> </p>
   <% end %>
 </div>
