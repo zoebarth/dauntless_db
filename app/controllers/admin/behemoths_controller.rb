@@ -1,6 +1,5 @@
 module Admin
-  class BehemothsController < ApplicationController
-
+  class BehemothsController < AdminController
     def index
       @behemoths = Behemoth.all.order(:name)
     end
