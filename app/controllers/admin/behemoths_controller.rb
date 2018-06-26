@@ -41,7 +41,7 @@ module Admin
     end
 
     def behemoth_params
-      params.fetch(:behemoth, {}).permit(:name)
+      params.fetch(:behemoth, {}).permit(:name, elemental_damage_ids:[], elemental_weakness_ids:[])
     end
 
   end
