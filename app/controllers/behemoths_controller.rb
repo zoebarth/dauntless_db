@@ -1,5 +1,4 @@
-module Public
-  class BehemothsController < ApplicationController
+class BehemothsController < ApplicationController
     
     def index
       @behemoths = Behemoth.all.order(:name)
@@ -13,6 +12,4 @@ module Public
     def behemoth_params
       params.fetch(:behemoth, {}).permit(:name, damage_type_ids:[], weakness_type_ids:[])
     end
-
-  end
 end

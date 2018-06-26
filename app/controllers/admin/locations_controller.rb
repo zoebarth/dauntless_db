@@ -1,5 +1,5 @@
 module Admin
-  class LocationsController < ApplicationController
+  class LocationsController < AdminController
     def index
       @locations = Location.all
     end
