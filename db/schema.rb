@@ -30,10 +30,6 @@ ActiveRecord::Schema.define(version: 2018_06_25_223920) do
     t.index ["element_id"], name: "index_elemental_weaknesses_on_element_id"
   end
 
-  create_table "behemoths", force: :cascade do |t|
-    t.string "name"
-  end
-
   create_table "elements", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
