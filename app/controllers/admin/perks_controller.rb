@@ -5,7 +5,7 @@ module Admin
     end
 
     def show
-      set
+      set_perk
     end
 
     def new
@@ -13,17 +13,17 @@ module Admin
     end
 
     def edit
-      set
+      set_perk
     end
 
     def destroy
-      set
+      set_perk
       @perk.destroy
       redirect_to admin_perks_path
     end
 
     def update
-      set
+      set_perk
       if @perk.update(perks_params)
         redirect_to admin_perks_path
       end
@@ -37,7 +37,7 @@ module Admin
 
     private
 
-    def set
+    def set_perk
       @perk = Perk.find(params[:id])
     end
 
