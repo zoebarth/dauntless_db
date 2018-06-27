@@ -10,6 +10,6 @@ class BehemothsController < ApplicationController
     end
 
     def behemoth_params
-      params.fetch(:behemoth, {}).permit(:name, damage_type_ids:[], weakness_type_ids:[])
+      params.fetch(:behemoth, {}).permit(:name, :logo, damage_type_ids:[], weakness_type_ids:[])
     end
 end
