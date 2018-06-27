@@ -26,13 +26,18 @@ module Admin
       set_perk
       if @perk.update(perks_params)
         redirect_to admin_perks_path
+      else
+        format.html {render :edit}
       end
     end
 
     def create
       @perk = Perk.new(perks_params)
-      @perk.save
-      redirect_to admin_perks_path
+      if @perk.save
+        redirect_to admin_perks_path
+      else
+        render :new
+      end
     end
 
     private
