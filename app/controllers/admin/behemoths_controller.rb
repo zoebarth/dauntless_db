@@ -26,7 +26,7 @@ module Admin
       if @behemoth.update(behemoth_params)
         redirect_to admin_behemoth_path(@behemoth), notice: "Behemoth was successfully updated."
       else
-        format.html {render :edit}
+        render :edit
       end
     end
 

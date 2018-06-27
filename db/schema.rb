@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_145552) do
 
   create_table "reagents", force: :cascade do |t|
     t.string "name"
-    t.string "rarity"
+    t.integer "rarity"
     t.integer "behemoth_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

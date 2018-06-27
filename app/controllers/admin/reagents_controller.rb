@@ -26,7 +26,7 @@ module Admin
       if @reagent.update(reagent_params)
         redirect_to admin_reagent_path(@reagent), notice: "Reagent was successfully updated."
       else
-        format.html {render :edit}
+        render :edit
       end
     end
 
