@@ -1,0 +1,13 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h3> Reagent name: <%= @reagent.name %> </h3>
+
+  <h5> Rarity: </h5>
+  <p> <%= @reagent.rarity.capitalize %> </p>
+
+  <h5> Behemoth: </h5>
+  <p> <%= @reagent.behemoth.name %> </p>
+
+  <%= link_to 'Edit', edit_admin_reagent_path(@reagent) %> | <%= link_to 'Back', admin_reagents_path %> 
+</div>

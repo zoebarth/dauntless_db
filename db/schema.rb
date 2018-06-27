@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_144922) do
+ActiveRecord::Schema.define(version: 2018_06_27_145552) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 2018_06_27_144922) do
     t.string "point_6"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+  
+  create_table "reagents", force: :cascade do |t|
+    t.string "name"
+    t.integer "rarity"
+    t.integer "behemoth_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["behemoth_id"], name: "index_reagents_on_behemoth_id"
   end
 
 end

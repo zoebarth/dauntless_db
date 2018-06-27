@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Admin List of Reagents</h1>
+  </div>
+
+  <div class="row justify-content-center">
+    <h4> <%= link_to "Create new reagent", new_admin_reagent_path %> </h4>
+  </div>
+
+
+  <% @reagents.each do |reagent| %>
+    <div class="row justify-content-center">
+      <p> <%= link_to reagent.name, admin_reagent_path(reagent)%> </p>
+    </div>
+  <% end %> 
+</div>
