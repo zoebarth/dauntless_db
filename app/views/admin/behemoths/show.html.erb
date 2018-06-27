@@ -21,6 +21,11 @@
         <%= 'unknown (not in the database)' %>
       <% end %> 
     </p>
+
+  <% if @behemoth.logo.attached? %>
+    <%= image_tag @behemoth.logo.variant(resize: "100x100") %>
+  <% end%>
+
     
   <%= link_to 'Edit', edit_admin_behemoth_path(@behemoth) %> | <%= link_to 'Back', admin_behemoths_path %> 
 </div>

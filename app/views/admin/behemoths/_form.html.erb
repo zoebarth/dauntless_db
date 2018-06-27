@@ -35,6 +35,11 @@
       <%= form.collection_select :location_id, Location.all, :id, :name, {},{ class: "custom-select" } %> 
     </div>
 
+    <div class="row justify-content-center">
+      <%= form.label 'Logo' %>
+      <%= form.file_field :logo %>
+    </div>
+
     <div class="actions">
       <%= form.submit %>
     </div>
