@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'behemoths#index'
 
   namespace :admin do
-    resources :elements, :locations, :behemoths
+    resources :elements, :locations, :behemoths, :reagents
     get '/', to: 'behemoths#index'
   end
 
