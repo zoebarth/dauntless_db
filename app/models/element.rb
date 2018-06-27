@@ -5,4 +5,5 @@ class Element < ApplicationRecord
   has_many :elemental_weaknesses
 
   has_one_attached :avatar
+  
 end
