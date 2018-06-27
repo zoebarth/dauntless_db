@@ -27,7 +27,7 @@ module Admin
       if @perk.update(perks_params)
         redirect_to admin_perks_path
       else
-        format.html {render :edit}
+        render :edit
       end
     end
 
