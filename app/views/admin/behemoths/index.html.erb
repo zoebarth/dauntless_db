@@ -13,5 +13,19 @@
       <p> <%= link_to behemoth.name, admin_behemoth_path(behemoth)%> </p>
     </div>
   <% end %>
+
+
+  <div class='column justify-content-center'>
+    <% Element.all.each do |e| %>
+      <div class='row justify-content-center'>
+        <%= link_to e.name, edit_admin_element_path(e) %>:
+        <% if e.avatar.attached? %>
+        <%= image_tag e.avatar.variant(resize: "100x100") %>
+        <% else %>
+        <%= 'Image not uploaded' %>
+        <% end %>
+      </div>
+      <% end %>
+  </div>
   
 </div>
