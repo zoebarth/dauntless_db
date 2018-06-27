@@ -1,0 +1,83 @@
+<%= form_with(model: [:admin, perk], local: true) do |form| %>
+  <% if perk.errors.any? %>
+    <div id='error_explanation'>
+      <h2>
+        <%= pluralize(perk.errors.count, 'error') %>
+        prohibited this perk from being saved:
+      </h2>
+      <ul>
+        <% perk.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:name, 'Perk name: ') %>
+      <%= form.text_field(:name) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:desc, 'Perk description: ') %>
+      <%= form.text_field(:desc) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:point_1, 'Perk 1 point effect: ') %>
+      <%= form.text_field(:point_1) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:point_2, 'Perk 2 point effect: ') %>
+      <%= form.text_field(:point_2) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:point_3, 'Perk 3 point effect: ') %>
+      <%= form.text_field(:point_3) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:point_4, 'Perk 4 point effect: ') %>
+      <%= form.text_field(:point_4) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:point_5, 'Perk 5 point effect: ') %>
+      <%= form.text_field(:point_5) %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row  justify-content-center'>
+      <%= form.label(:point_6, 'Perk 6 point effect: ') %>
+      <%= form.text_field(:point_6) %>
+    </div>
+  </div>
+
+  <div class='actions'>
+    <%= form.submit %>
+  </div>
+
+  <div class='container'>
+    <div class='row justify-content-center'>
+      <%= link_to 'Back', admin_perks_path %>
+    </div>
+  </div>
+
+<% end %>
+

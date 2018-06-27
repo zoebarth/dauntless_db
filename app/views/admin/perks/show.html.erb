@@ -1,0 +1,39 @@
+<div class='container'>
+  <p id='notice'> <%= notice %> </p>
+</div>
+
+<div class='container'>
+  <h3> Perk name: <%= @perk.name %></h3>
+</div>
+
+<div class='container'>
+  <h3> Description: <%= @perk.desc %></h3>
+</div>
+
+<div class='container'>
+  <h3> Park 1 point effect: <%= @perk.point_1 %></h3>
+</div>
+
+<div class='container'>
+  <h3> Park 2 point effect: <%= @perk.point_2 %></h3>
+</div>
+
+<div class='container'>
+  <h3> Park 3 point effect: <%= @perk.point_3 %></h3>
+</div>
+
+<div class='container'>
+  <h3> Park 4 point effect: <%= @perk.point_4 %></h3>
+</div>
+
+<div class='container'>
+  <h3> Park 5 point effect: <%= @perk.point_5 %></h3>
+</div>
+
+<div class='container'>
+  <h3> Park 6 point effect: <%= @perk.point_6 %></h3>
+</div>
+
+<div class="container">
+  <%= link_to 'Edit', edit_admin_perk_path(@perk) %> | <%= link_to 'Back', admin_perks_path %> 
+</div>
