@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Admin List of Perks</h1>
+  </div>
+  <div class="row justify-content-center">
+    <h4> <%= link_to "Create a new Perk", new_admin_perk_path %> </h4>
+  </div>
+  <% @perks.each do |perk| %>
+    <div class="row justify-content-center">
+      <p>
+        <%= link_to perk.name, admin_perk_path(perk)%>
+      </p>
+    </div>
+  <% end %>
+</div>

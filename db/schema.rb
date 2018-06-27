@@ -65,6 +65,19 @@ ActiveRecord::Schema.define(version: 2018_06_27_145552) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "perks", force: :cascade do |t|
+    t.string "name"
+    t.string "desc"
+    t.string "point_1"
+    t.string "point_2"
+    t.string "point_3"
+    t.string "point_4"
+    t.string "point_5"
+    t.string "point_6"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  
   create_table "reagents", force: :cascade do |t|
     t.string "name"
     t.integer "rarity"
