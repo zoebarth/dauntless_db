@@ -21,8 +21,29 @@
           <% end%>   
         </td>
         <td>  <%=behemoth.name %> </td>
-        <td> <%= behemoth.damage_types.map(&:name).join(", ") %>  </td>
-        <td> <%= behemoth.weakness_types.map(&:name).join(", ") %>  </td>
+        
+        <td> 
+          <% behemoth.damage_types.each do |e| %>
+            <% if e.avatar.attached? %>
+              <%= image_tag e.avatar.variant(resize: "20x20") %>
+              <small><%= e.name %></small>
+            <% else %>
+              <%= e.name %>
+            <% end %>
+          <% end %>
+        </td>
+
+
+        <td> 
+          <% behemoth.weakness_types.each do |e| %>
+            <% if e.avatar.attached? %>
+              <%= image_tag e.avatar.variant(resize: "20x20") %>
+              <small><%= e.name %></small>
+            <% else %>
+              <%= e.name %>
+            <% end %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
     </tbody>

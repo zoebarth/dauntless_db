@@ -39,7 +39,7 @@ module Admin
     private
 
     def admin_elements_params
-      params.require(:element).permit(:name)
+      params.require(:element).permit(:name, :avatar)
     end
 
   end

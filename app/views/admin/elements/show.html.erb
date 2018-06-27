@@ -1,4 +1,8 @@
 <h1>Element <%= @element.name %></h1>
-
+<div class='row'>
+  <% if @element.avatar.attached? %>
+    <%= image_tag @element.avatar.variant(resize: "100x100") %>
+  <% end %>
+</div>
 
 <p><%=link_to 'Back', admin_elements_path %> </p>
