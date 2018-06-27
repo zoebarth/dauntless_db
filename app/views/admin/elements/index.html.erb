@@ -14,7 +14,9 @@
         <%= a.name %>
       </td>
       <td>
-        <%#= a.avatar %>
+        <% if a.avatar.attached? %>
+          <%= image_tag a.avatar.variant(resize: "100x100") %>
+        <% end %>
       </td>
       <td>
         <%= link_to 'Show', admin_element_path(a) %>
