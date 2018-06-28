@@ -7,7 +7,7 @@
   <p> <%= @reagent.rarity.capitalize %> </p>
 
   <h5> Behemoth: </h5>
-  <p> <%= @reagent.behemoth.name %> </p>
+  <p> <%= @reagent.behemoth.try(:name) %> </p>
 
   <%= link_to 'Edit', edit_admin_reagent_path(@reagent) %> | <%= link_to 'Back', admin_reagents_path %> 
 </div>
