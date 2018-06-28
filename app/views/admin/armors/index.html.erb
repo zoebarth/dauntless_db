@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Admin List of Armor</h1>
+  </div>
+
+  <div class="row justify-content-center">
+    <h4> <%= link_to "Create new armor", new_admin_armor_path %> </h4>
+  </div>
+
+
+  <% @armors.each do |armor| %>
+    <div class="row justify-content-center">
+      <p> <%= link_to armor.name, admin_armor_path(armor)%> </p>
+    </div>
+  <% end %> 
+</div>

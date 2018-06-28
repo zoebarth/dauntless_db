@@ -1,7 +1,7 @@
 module Admin
   class PerksController < AdminController
     def index
-      @perks = Perk.all
+      @perks = Perk.order(:name)
     end
 
     def show
