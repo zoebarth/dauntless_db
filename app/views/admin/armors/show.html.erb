@@ -1,0 +1,31 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h3> Armor name: <%= @armor.name %> </h3>
+
+  <h5> Cell Slot Type:</h5>
+  <p>  <%= @armor.cell_slot_type.capitalize %> </p>
+
+  <h5> Base Armor: </h5>
+  <p> <%= @armor.base_armor %></p> 
+
+  <h5> Elemental Resistance Type:</h5>
+  <p>  <%= @armor.elemental_resistance.name %> </p>
+
+  <h5> Elemental Resistance Amount: </h5>
+  <p>  <%= @armor.elemental_resistance_amount %> </p> 
+
+  <h5> Elemental Weakness Type:</h5>
+  <p>  <%= @armor.elemental_weakness.name %> </p>
+
+  <h5> Elemental Weakness Amount: </h5>
+  <p>  <%= @armor.elemental_weakness_amount %> </p> 
+
+  <h5> Perk:</h5>
+  <p>  <%= @armor.perk.name %> </p>
+
+  <h5> Perk Amount: </h5>
+  <p>  <%= @armor.perk_amount %> </p> 
+
+  <%= link_to 'Edit', edit_admin_armor_path(@armor) %> | <%= link_to 'Back', admin_armors_path %> 
+</div>

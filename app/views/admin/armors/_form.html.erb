@@ -1,0 +1,69 @@
+<%= form_with(model: [ :admin, armor ], local: true) do |form| %>
+  <% if armor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(armor.errors.count, "error") %> prohibited this armor from being saved:</h2>
+      <ul>
+        <%armor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <%= form.label(:name, 'Armor name: ') %>
+      <%= form.text_field(:name) %> 
+    </div>
+
+    <div class="row justify-content-center">
+      <%= form.label 'Cell Slot Type: ' %>
+      <%= form.select :cell_slot_type, Armor.cell_slot_types.map { |k,v| [k.capitalize, k]}, {}, { class: "custom-select" } %>
+    </div>
+
+    <div class="row justify-content-center">
+        <%= form.label 'Base Armor: '%>
+        <%= form.number_field(:base_armor)%>
+    </div>
+    
+    <div class="row justify-content-center">
+      <%= form.label 'Elemental Resistance Type' %>
+      <%= form.collection_select :elemental_resistance_id, Element.all.order(:name), :id, :name, {},{ class: "custom-select" } %> 
+    </div>
+
+    <div class="row justify-content-center">
+        <%= form.label 'Elemental Resistance Amount: '%>
+        <%= form.number_field(:elemental_resistance_amount)%>
+    </div>
+
+    <div class="row justify-content-center">
+      <%= form.label 'Elemental Weakness Type' %>
+      <%= form.collection_select :elemental_weakness_id, Element.all.order(:name), :id, :name, {},{ class: "custom-select" } %> 
+    </div>
+
+    <div class="row justify-content-center">
+        <%= form.label 'Elemental Weakness Amount: '%>
+        <%= form.number_field(:elemental_weakness_amount)%>
+    </div>
+
+    <div class="row justify-content-center">
+      <%= form.label 'Perk' %>
+      <%= form.collection_select :perk_id, Perk.all.order(:name), :id, :name, {},{ class: "custom-select" } %> 
+    </div>
+
+    <div class="row justify-content-center">
+        <%= form.label 'Perk Amount: '%>
+        <%= form.number_field(:perk_amount)%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+    <div class="row justify-content-center"> 
+      <%= link_to 'Back',admin_armors_path %>
+    </div>
+  </div>
+  
+<% end %>
+

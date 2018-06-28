@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_145552) do
+ActiveRecord::Schema.define(version: 2018_06_28_150950) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(version: 2018_06_27_145552) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "armors", force: :cascade do |t|
+    t.string "name"
+    t.integer "cell_slot_type"
+    t.integer "base_armor"
+    t.integer "elemental_resistance_amount"
+    t.integer "elemental_weakness_amount"
+    t.integer "perk_amount"
+    t.integer "elemental_resistance_id"
+    t.integer "elemental_weakness_id"
+    t.integer "perk_id"
+    t.index ["elemental_resistance_id"], name: "index_armors_on_elemental_resistance_id"
+    t.index ["elemental_weakness_id"], name: "index_armors_on_elemental_weakness_id"
+    t.index ["perk_id"], name: "index_armors_on_perk_id"
   end
 
   create_table "behemoths", force: :cascade do |t|
