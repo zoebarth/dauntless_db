@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get '/', to: 'behemoths#index'
   end
 
-  resources :behemoths
+  resources :behemoths, :armors
 end
 
 
