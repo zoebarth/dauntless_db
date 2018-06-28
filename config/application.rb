@@ -15,5 +15,9 @@ module DauntlessDb
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    Raven.configure do |config|
+      config.dsn = 'https://1422c3852c0e45f4817844a9167d5944:7b314195ab814220b07e4773b0a83b7a@sentry.io/1234497'
+    end
   end
 end
