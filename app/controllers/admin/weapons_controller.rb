@@ -1,7 +1,7 @@
 module Admin
   class WeaponsController < AdminController
     def index
-      @weapons = Weapon.all.order(:name)
+      @weapons = Weapon.order(:name)
     end
 
     def new
