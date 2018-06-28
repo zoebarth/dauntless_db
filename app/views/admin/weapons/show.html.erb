@@ -9,37 +9,37 @@
   <h5> Base Power: </h5>
   <p> <%= @weapon.base_power %> <p>
 
-  <% unless @weapon.elemental_power.nil? %>
+  <% if @weapon.elemental_power%>
     <h5> Element: </h5>
     <p> <%= @weapon.elemental_power%> <p>
   <% end %>
 
-  <%unless @weapon.elemental_power_amount.nil?%>
+  <% if @weapon.elemental_power_amount%>
     <h5> Elemental Power:</h5>
     <p> <%= @weapon.elemental_power_amount %> <p>
   <% end %>
 
-  <%unless @weapon.perk.nil?%>
+  <% if @weapon.perk%>
     <h5> Perk: </h5>
     <p> <%= @weapon.perk.name %> <p>
   <% end %>
 
-  <%unless @weapon.perk_amount.nil?%>
+  <% if @weapon.perk_amount%>
     <h5> Perk Amount:</h5>
     <p> <%= @weapon.perk_amount %> <p>
   <% end %>
 
-  <%unless @weapon.cell_slot_type_one.nil?%>
+  <% if @weapon.cell_slot_type_one%>
     <h5> Cell Slot 1: </h5>
     <p> <%= @weapon.cell_slot_type_one %> <p>
   <% end %>
 
-  <%unless @weapon.cell_slot_type_two.nil?%>
+  <% if @weapon.cell_slot_type_two%>
     <h5> Cell Slot 2: </h5>
     <p> <%= @weapon.cell_slot_type_two %> <p>
   <% end %>
 
-  <%unless @weapon.unique_effect.nil?%>
+  <% if @weapon.unique_effect.length > 0 %>
     <h5>Unique Effect: </h5>
     <p> <%= @weapon.unique_effect %> <p>
   <% end %>
