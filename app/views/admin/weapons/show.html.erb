@@ -1,0 +1,48 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h3> Weapon Name: <%= @weapon.name %> </h3>
+
+  <h5> Weapon Type: </h5>
+  <p> <%= @weapon.weapon_type.capitalize %> </p>
+
+  <h5> Base Power: </h5>
+  <p> <%= @weapon.base_power %> <p>
+
+  <% unless @weapon.elemental_power.nil? %>
+    <h5> Element: </h5>
+    <p> <%= @weapon.elemental_power%> <p>
+  <% end %>
+
+  <%unless @weapon.elemental_power_amount.nil?%>
+    <h5> Elemental Power:</h5>
+    <p> <%= @weapon.elemental_power_amount %> <p>
+  <% end %>
+
+  <%unless @weapon.perk.nil?%>
+    <h5> Perk: </h5>
+    <p> <%= @weapon.perk.name %> <p>
+  <% end %>
+
+  <%unless @weapon.perk_amount.nil?%>
+    <h5> Perk Amount:</h5>
+    <p> <%= @weapon.perk_amount %> <p>
+  <% end %>
+
+  <%unless @weapon.cell_slot_type_one.nil?%>
+    <h5> Cell Slot 1: </h5>
+    <p> <%= @weapon.cell_slot_type_one %> <p>
+  <% end %>
+
+  <%unless @weapon.cell_slot_type_two.nil?%>
+    <h5> Cell Slot 2: </h5>
+    <p> <%= @weapon.cell_slot_type_two %> <p>
+  <% end %>
+
+  <%unless @weapon.unique_effect.nil?%>
+    <h5>Unique Effect: </h5>
+    <p> <%= @weapon.unique_effect %> <p>
+  <% end %>
+
+  <%= link_to 'Edit', edit_admin_weapon_path(@weapon) %> | <%= link_to 'Back', admin_weapons_path %> 
+</div>
