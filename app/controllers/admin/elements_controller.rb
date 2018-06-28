@@ -2,7 +2,7 @@ module Admin
   class ElementsController < AdminController
     
     def index
-      @elements = Element.all
+      @elements = Element.all.order(:name)
     end
 
     def show
