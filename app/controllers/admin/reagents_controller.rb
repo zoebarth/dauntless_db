@@ -1,7 +1,7 @@
 module Admin
   class ReagentsController < AdminController
     def index
-      @reagents = Reagent.all.order(:name)
+      @reagents = Reagent.order(:name)
     end
 
     def new

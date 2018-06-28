@@ -1,7 +1,7 @@
 module Admin
   class LocationsController < AdminController
     def index
-      @locations = Location.all.order(:name)
+      @locations = Location.order(:name)
     end
 
     def show
