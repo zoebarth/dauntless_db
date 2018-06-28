@@ -1,7 +1,7 @@
 module Admin
   class ArmorsController < AdminController
     def index
-      @armors = Armor.all.order(:name)
+      @armors = Armor.order(:name)
     end
 
     def new

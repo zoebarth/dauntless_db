@@ -1,7 +1,7 @@
 module Admin
   class BehemothsController < AdminController
     def index
-      @behemoths = Behemoth.all.order(:name)
+      @behemoths = Behemoth.order(:name)
     end
 
     def new

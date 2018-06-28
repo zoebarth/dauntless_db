@@ -10,19 +10,20 @@
   <p> <%= @armor.base_armor %></p> 
 
   <h5> Elemental Resistance Type:</h5>
-  <p>  <%= @armor.elemental_resistance.name %> </p>
+  <p>  <%= @armor.elemental_resistance.try(:name) %> </p>
 
   <h5> Elemental Resistance Amount: </h5>
   <p>  <%= @armor.elemental_resistance_amount %> </p> 
 
   <h5> Elemental Weakness Type:</h5>
-  <p>  <%= @armor.elemental_weakness.name %> </p>
+  <p>  <%= @armor.elemental_weakness.try(:name) %> </p>
 
   <h5> Elemental Weakness Amount: </h5>
+
   <p>  <%= @armor.elemental_weakness_amount %> </p> 
 
   <h5> Perk:</h5>
-  <p>  <%= @armor.perk.name %> </p>
+  <p>  <%= @armor.perk.try(:name) %> </p>
 
   <h5> Perk Amount: </h5>
   <p>  <%= @armor.perk_amount %> </p> 
