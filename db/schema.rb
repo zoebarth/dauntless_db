@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_28_150950) do
+ActiveRecord::Schema.define(version: 2018_06_28_152627) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 2018_06_28_150950) do
     t.string "name"
     t.integer "location_id"
     t.index ["location_id"], name: "index_behemoths_on_location_id"
+  end
+
+  create_table "behemoths_locations", id: false, force: :cascade do |t|
+    t.integer "location_id", null: false
+    t.integer "behemoth_id", null: false
+    t.index ["location_id", "behemoth_id"], name: "index_behemoths_locations_on_location_id_and_behemoth_id"
   end
 
   create_table "elemental_damages", force: :cascade do |t|
