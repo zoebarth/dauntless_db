@@ -1,9 +1,8 @@
 module Admin
-	class WeaponsController < AdminController
-
-		def index
+  class WeaponsController < AdminController
+    def index
       @weapons = Weapon.all.order(:name)
-		end
+    end
 
     def new
       @weapon = Weapon.new
@@ -35,14 +34,10 @@ module Admin
       set_weapon
     end
 
-
-
-
-
-		private
-			def set_weapon
-        @weapon = Weapon.find(params[:id])
-			end
+    private
+      def set_weapon
+          @weapon = Weapon.find(params[:id])
+      end
 
       def weapon_params
         params.fetch(:weapon, {}).permit(:name,
@@ -57,5 +52,5 @@ module Admin
                                          :unique_effect)
       end
 
-	end
+  end
 end
