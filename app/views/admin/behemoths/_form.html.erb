@@ -33,7 +33,7 @@
     </div>
    
     <div class='row justify-content-center'>
-        <%= form.collection_select :location_ids, Location.all, :id, :name, {}, {:multiple => true, :style => "width:450px;"}%>
+      <%= form.collection_select :location_ids, Location.all, :id, :name, {}, {:multiple => true, :style => "width:450px;"}%>
     </div>
 
     <div class="row justify-content-center">
@@ -49,6 +49,5 @@
       <%= link_to 'Back',admin_behemoths_path %>
     </div>
   </div>
-  
 <% end %>
 
