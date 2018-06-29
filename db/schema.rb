@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_06_28_152627) do
+ActiveRecord::Schema.define(version: 2018_06_29_145418) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,8 +50,6 @@ ActiveRecord::Schema.define(version: 2018_06_28_152627) do
 
   create_table "behemoths", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "location_id"
     t.index ["location_id"], name: "index_behemoths_on_location_id"
   end
@@ -124,6 +121,7 @@ ActiveRecord::Schema.define(version: 2018_06_28_152627) do
     t.string "unique_effect"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "max_power"
     t.index ["elemental_power_id"], name: "index_weapons_on_elemental_power_id"
     t.index ["perk_id"], name: "index_weapons_on_perk_id"
   end
