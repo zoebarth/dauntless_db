@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   root to: 'behemoths#index'
 
   namespace :admin do
-    resources :elements, :locations, :behemoths, :perks, :reagents, :armors
+    resources :elements, :locations, :behemoths, :perks, :reagents, :weapons, :armors
     get '/', to: 'behemoths#index'
   end
 
-  resources :behemoths
+  resources :behemoths, :armors, :weapons
 end
 
 

@@ -1,7 +1,7 @@
 class BehemothsController < ApplicationController
     
     def index
-      @behemoths = Behemoth.all.order(:name)
+      @behemoths = Behemoth.order(:name)
     end
 
     private 
