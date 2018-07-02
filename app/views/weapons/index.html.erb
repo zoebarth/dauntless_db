@@ -1,0 +1,48 @@
+<div class="container weapons_index">
+  <h1> Weapons </h1>
+  <p> There are a variety of weapons at a Slayers' disposal in the world of Dauntless; each type of weapon is able to deal different types of damage to Behemoths and their body parts.</p>            
+  <br>
+
+  <% @weapons.group_by {|weapon| weapon.weapon_type}.each do |weapon_t, weapons| %>
+    <h3> <%= weapon_t.pluralize.titleize %> </h3>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Base Power</th>
+          <th>Max Power</th>
+          <th>Elemental Damage</th>
+          <th>Damage Amount </th>
+          <th>Perk</th>
+          <th>Perk Amount</th>
+          <th>Cell Slot 1</th>
+          <th>Cells Slot 2</th>
+          <th>Unique Effect</th>
+
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% weapons.each do |weapon| %>
+          <tr>
+            <td> <%= weapon.name %> </td>
+            <td> <%= weapon.base_power %></td>
+            <td> <%= weapon.max_power %></td>
+            <td> <%= weapon.elemental_power%></td>
+            <td> <%= weapon.elemental_power_amount %></td>
+            <td> <%= weapon.perk.try(:name)%></td>
+            <td> <%= weapon.perk_amount %></td>
+            <td> <%= weapon.cell_slot_type_one %> </td>
+            <td> <%= weapon.cell_slot_type_two %> </td>
+            <% if weapon.unique_effect.length > 0 %>
+              <td> Yes </td>
+            <% else %>
+              <td> No </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
