@@ -10,16 +10,15 @@
     </div>
   <% end %>
   <div class="container">
-    <div class="row justify-content-left">
+    <div class="form-group">
       <%= form.label(:name, "Location's name: ") %>
-    </div>
-    <div class="row justify-content-center">
       <%= form.text_field :name, class: 'form-control', placeholder: "New New York" %> 
     </div>
+
     <div class='row justify-content-center'>
       <a class = 'btn btn-secondary btn-sm mr-1 mt-2' href="<%=admin_locations_path%>" role=“button”> Back </a>
       <button type='Submit' class='btn btn-primary btn-sm mt-2' >Submit</button>
-   </div>
+    </div>
   </div>
 <% end %>
 
