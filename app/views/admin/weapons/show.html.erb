@@ -14,11 +14,11 @@
 
   <% if @weapon.elemental_power%>
     <h5> Element: </h5>
-    <p> <%= @weapon.elemental_power%> <p>
+    <p> <%= @weapon.elemental_power.name%> <p>
   <% end %>
 
   <% if @weapon.elemental_power_amount%>
-    <h5> Elemental Power:</h5>
+    <h5> Elemental Power Amount:</h5>
     <p> <%= @weapon.elemental_power_amount %> <p>
   <% end %>
 

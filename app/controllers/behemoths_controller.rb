@@ -4,6 +4,10 @@ class BehemothsController < ApplicationController
       @behemoths = Behemoth.order(:name)
     end
 
+    def show 
+      set_behemoth
+    end
+
     private 
     def set_behemoth
       @behemoth = Behemoth.find(params[:id])
