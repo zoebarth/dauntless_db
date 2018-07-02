@@ -17,13 +17,6 @@ module Admin
       set_element
     end
 
-    # def destroy
-    #   @element = Element.find(params[:id])
-    #   @element.destroy
-
-    #   redirect_to admin_elements_path
-    # end
-
     def update
       set_element
       if @element.update(admin_elements_params)

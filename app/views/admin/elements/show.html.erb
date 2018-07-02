@@ -7,13 +7,13 @@
   </div>
 
   <div class="row justify-content-center mb-2">
-  	<%if @element.avatar.attached? %>
-  	   <%= image_tag @element.avatar, size: "100x100"%>
-  	<% end %>
+    <%if @element.avatar.attached? %>
+       <%= image_tag @element.avatar, size: "100x100"%>
+    <% end %>
   </div>
 
   <div class="row justify-content-center">
-  	<a class="btn btn-secondary btn-sm mr-1" href="<%=admin_elements_path%>" role ="button">Back</a>
-  	<a class="btn btn-warning btn-sm mr-1" href="<%=edit_admin_element_path%>" role ="button">Edit</a>
+    <a class="btn btn-secondary btn-sm mr-1" href="<%=admin_elements_path%>" role ="button">Back</a>
+    <a class="btn btn-warning btn-sm mr-1" href="<%=edit_admin_element_path%>" role ="button">Edit</a>
   </div>
 </div> 
