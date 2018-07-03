@@ -7,23 +7,67 @@
   background-size: cover;
   -o-background-size: cover;
   background-size: 100% 100%;
- .full{
-    h1 {
+  h1 {
       color: white;
       font-size: 400%; 
       font-family: Impact; 
-    }
-    p{
+  }
+  p{
       color: white;
       font-size: 150%
-    }
+  }
+ 
+ .behemoth_index{
     th{
-    font-size: 160%;
-    font-weight:bold;
+      font-size: 160%;
+      font-weight:bold;
     }
     td{
       font-size: 135%;
     }
-
+    a{
+      color: white;
+      text-decoration: underline;
+    }
   }
+
+  .armors_index{
+    th{
+      font-size: 130%;
+      font-weight:bold;
+    }
+    td{
+      font-size: 95%;
+    }
+  }
+
+  .weapons_index{
+    h3{
+      font-size: 300%;
+      color: white;
+    }
+    th{
+      font-size: 140%;
+      font-weight:bold;
+    }
+    td{
+      font-size: 105%;
+    }
+  }
+
+  .behemoth_detail{
+    h3{
+      color: white;
+      font-size: 400%; 
+      font-family: Impact; 
+    }
+
+    h5{
+      color: white;
+      font-size: 200%;
+      font-weight:bold;
+    }
+    
+  }
+
 }

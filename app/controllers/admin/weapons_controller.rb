@@ -43,6 +43,7 @@ module Admin
         params.fetch(:weapon, {}).permit(:name,
                                          :weapon_type,
                                          :base_power,
+                                         :max_power,
                                          :elemental_power_id,
                                          :elemental_power_amount,
                                          :perk_amount,
