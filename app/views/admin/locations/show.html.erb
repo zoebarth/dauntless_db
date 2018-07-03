@@ -1,4 +1,21 @@
-<h1>Location <%= @location.name %></h1>
-
-
-<p><%=link_to 'Back', admin_locations_path %> </p>
+<div class='container'>
+  <p id='notice'>
+    <%= notice %>
+  </p>
+  <div class='row justify-content-center'>
+    <h3>Location <%= @location.name %></h3>
+  </div>
+  <div class='row justify-content-center'>
+    <h3> 
+      <% unless @location.parent.blank? %>
+        Parent location: <%= link_to @location.parent.name, admin_location_path(@location.parent) %>
+      <% else %>
+        <p>No Parent Location</p>
+      <% end %>
+      </h3>
+  </div>
+  <div class="row justify-content-center">
+    <%= link_to 'Edit', edit_admin_location_path(@location) %> |
+    <%= link_to 'Back', admin_locations_path %>
+  </div>
+</div>
