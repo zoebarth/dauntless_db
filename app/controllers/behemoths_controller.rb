@@ -6,9 +6,19 @@ class BehemothsController < ApplicationController
 
     def show 
       set_behemoth
+      suggest_weapons
+      suggest_armor
+    end
+    
+    private
+    def suggest_weapons
+      @suggested_weapons = Weapon.where(elemental_power: @behemoth.weakness_types)
     end
 
-    private 
+    def suggest_armor
+      @suggested_armor = Armor.where(elemental_resistance: @behemoth.damage_types)
+    end
+
     def set_behemoth
       @behemoth = Behemoth.find(params[:id])
     end
