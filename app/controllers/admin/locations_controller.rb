@@ -25,9 +25,11 @@ module Admin
 
     def update
       @location = Location.find(params[:id]) 
-          if @location.update(locations_params)
-            redirect_to admin_locations_path
-          end
+        if @location.update(locations_params)
+          redirect_to admin_locations_path
+        else
+          render :edit
+        end
     end
 
     def create
@@ -39,7 +41,7 @@ module Admin
     private
 
     def locations_params
-      params.require(:location).permit(:name)
+      params.require(:location).permit(:name, :parent_id)
     end
     
   end

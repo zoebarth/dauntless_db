@@ -37,7 +37,7 @@
     </div>
 
     <div class='row justify-content-center'>
-      <%= form.collection_select :location_ids, Location.all, :id, :name, {}, {:multiple => true, :style => "width:450px;"}%>
+      <%= form.grouped_collection_select :location_ids, Location.where(parent_id: nil), :children, :name, :id, :name, {}, { multiple: true, :style => "width:450px;", class: "form-control"} %>
     </div>
 
     <div class="row justify-content-center">

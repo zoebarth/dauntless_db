@@ -9,13 +9,16 @@
   <h5> Base Power: </h5>
   <p> <%= @weapon.base_power %> <p>
 
+  <h5> Max Power: </h5>
+  <p> <%= @weapon.max_power %> <p>
+
   <% if @weapon.elemental_power%>
     <h5> Element: </h5>
     <p> <%= @weapon.elemental_power.name%> <p>
   <% end %>
 
   <% if @weapon.elemental_power_amount%>
-    <h5> Elemental Power:</h5>
+    <h5> Elemental Power Amount:</h5>
     <p> <%= @weapon.elemental_power_amount %> <p>
   <% end %>
 
