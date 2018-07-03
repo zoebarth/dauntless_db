@@ -36,12 +36,12 @@
   <% end %>
 
   <h5> Suggested Weapons: </h5>
-  <% Weapon.where(elemental_power: @behemoth.weakness_types).each do |w| %>
+  <% @suggested_weapons.each do |w| %>
     <p> <%= w.name %> </p>
   <% end %>
 
   <h5> Suggested Armor: </h5>
-  <% Armor.where(elemental_resistance: @behemoth.damage_types).each do |a| %>
+  <% @suggested_armor.each do |a| %>
     <p> <%= a.name %> </p>
   <% end %>
 
