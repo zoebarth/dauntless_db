@@ -1,6 +1,4 @@
-<% content_for(:custom_class, 'index_page') %>
-
-<div class="container full">
+<div class="container behemoth_index">
   <h1>Behemoths </h1>
   <p>Behemoths draw their cataclysmic power from aether, consuming the world.</p>            
   <table class="table table-dark table-striped">
@@ -20,7 +18,7 @@
              <%= image_tag behemoth.logo.variant(resize: "45x45") %> 
           <% end%>   
         </td>
-        <td>  <%=behemoth.name %> </td>
+        <td>  <%= link_to behemoth.name, behemoth_path(behemoth)%> </td>
         
         <td> 
           <% behemoth.damage_types.each do |e| %>

@@ -17,8 +17,8 @@
   <% end %>
   <h5> Location Found: </h5>
   <p>
-    <% if @behemoth.location %>
-      <% @behemoth.location.each do |loc| %>
+    <% if @behemoth.locations.blank? %>
+      <% @behemoth.locations.each do |loc| %>
       <p>  
         <%= loc.name %>
       </p>
