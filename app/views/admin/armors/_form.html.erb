@@ -10,60 +10,56 @@
     </div>
   <% end %>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <%= form.label(:name, 'Armor name: ') %>
-      <%= form.text_field(:name) %> 
-    </div>
-
-    <div class="row justify-content-center">
-      <%= form.label 'Cell Slot Type: ' %>
-      <%= form.select :cell_slot_type, Armor.cell_slot_types.map { |k,v| [k.capitalize, k]}, {}, { class: "custom-select" } %>
-    </div>
-
-    <div class="row justify-content-center">
-        <%= form.label 'Base Armor: '%>
-        <%= form.number_field(:base_armor)%>
-    </div>
-    
-    <div class="row justify-content-center">
-      <%= form.label 'Elemental Resistance Type' %>
-      <%= form.collection_select :elemental_resistance_id, Element.order(:name), :id, :name, {include_blank: true},{ class: "custom-select" } %> 
-    </div>
-
-    <div class="row justify-content-center">
-        <%= form.label 'Elemental Resistance Amount: '%>
-        <%= form.number_field(:elemental_resistance_amount)%>
-    </div>
-
-    <div class="row justify-content-center">
-      <%= form.label 'Elemental Weakness Type' %>
-      <%= form.collection_select :elemental_weakness_id, Element.order(:name), :id, :name, {include_blank: true},{ class: "custom-select" } %> 
-    </div>
-
-    <div class="row justify-content-center">
-        <%= form.label 'Elemental Weakness Amount: '%>
-        <%= form.number_field(:elemental_weakness_amount)%>
-    </div>
-
-    <div class="row justify-content-center">
-      <%= form.label 'Perk' %>
-      <%= form.collection_select :perk_id, Perk.all.order(:name), :id, :name, {include_blank: true},{ class: "custom-select" } %> 
-    </div>
-
-    <div class="row justify-content-center">
-        <%= form.label 'Perk Amount: '%>
-        <%= form.number_field(:perk_amount)%>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-
-    <div class="row justify-content-center"> 
-      <%= link_to 'Back',admin_armors_path %>
-    </div>
+  <div class="form-group">
+    <label for="name">Armor Name:</label>
+    <%= form.text_field :name, class: "form-control" , placeholder: "Enter Name"%>
   </div>
+
+  <div class="form-group">
+    <%= form.label 'Cell Slot Type: ' %>
+    <%= form.select :cell_slot_type, Armor.cell_slot_types.map { |k,v| [k.capitalize, k]}, {}, { class: "custom-select" } %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label 'Base Armor: '%>
+      <%= form.number_field :base_armor , class: "form-control" %>
+  </div>
+    
+  <div class="form-group">
+    <%= form.label 'Elemental Resistance Type' %>
+    <%= form.collection_select :elemental_resistance_id, Element.order(:name), :id, :name, {include_blank: true},{ class: "custom-select" } %> 
+  </div>
+
+  <div class="form-group">
+      <%= form.label 'Elemental Resistance Amount: '%>
+      <%= form.number_field :elemental_resistance_amount, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Elemental Weakness Type' %>
+    <%= form.collection_select :elemental_weakness_id, Element.order(:name), :id, :name, {include_blank: true},{ class: "custom-select" } %> 
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Elemental Weakness Amount: '%>
+    <%= form.number_field :elemental_weakness_amount, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Perk' %>
+    <%= form.collection_select :perk_id, Perk.all.order(:name), :id, :name, {include_blank: true},{ class: "custom-select" } %> 
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Perk Amount: '%>
+    <%= form.number_field:perk_amount, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <a class = "btn btn-secondary btn-sm mr-1" href="<%=admin_reagents_path%>" role="button"> Back </a>
+    <button type="submit" class="btn btn-primary btn-sm"> Submit </button>
+  </div>
+
   
 <% end %>
 
