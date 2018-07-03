@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2018_06_29_145418) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_locations_on_parent_id"
   end
 
   create_table "perks", force: :cascade do |t|

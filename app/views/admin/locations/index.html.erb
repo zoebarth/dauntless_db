@@ -8,7 +8,7 @@
     <th>Name</th>
     <th></th>
   </tr>
-  <% @locations.each do |a| %>
+  <% @locations.where('parent_id is null').each do |a| %>
     <tr>
       <td>
         <%= a.name %>
@@ -20,8 +20,27 @@
         <%= link_to 'Edit', edit_admin_location_path(a) %>
       </td>
       <td>
-        <%= link_to 'Delete (for now will remove later)', admin_location_path(a), method: :delete, data: {confirm: "Delete #{a.name} for sure???"} %>
+        <%= link_to 'Delete', admin_location_path(a), method: :delete, data: {confirm: "Delete #{a.name} for sure???"} %>
       </td>
     </tr>
+    <% a.children.order(:name).each do |b| %>
+      <tr>
+        <td>
+          >
+        </td>
+        <td>
+          <%= b.name %>
+        </td>
+        <td>
+          <%= link_to 'Show', admin_location_path(b) %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_admin_location_path(b) %>
+        </td>
+        <td>
+          <%= link_to 'Delete', admin_location_path(b), method: :delete, data: {confirm: "Delete #{b.name} for sure???"} %>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
