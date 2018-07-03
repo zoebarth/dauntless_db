@@ -18,7 +18,7 @@
 
     <div class='row justify-content-center'>
       <%= form.label(:parent, 'Choose a parent location, if any: ') %>
-      <%= form.collection_select :parent_id, Location.all, :id, :name, { prompt: 'Select one' }, {:multiple => false, :style => "width:450px;", class: "form-control"}%>
+      <%= form.collection_select :parent_id, Location.all.where('parent_id is null'), :id, :name, { prompt: 'Select one' }, {:multiple => false, :style => "width:450px;", class: "form-control"}%>
     </div>
 
     <div class="actions">
