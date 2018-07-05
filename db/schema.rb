@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
 
   create_table "behemoths", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "location_id"
     t.index ["location_id"], name: "index_behemoths_on_location_id"
   end
