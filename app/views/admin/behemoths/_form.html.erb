@@ -11,47 +11,40 @@
   <% end %>
 
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="form-group">
       <%= form.label(:name, 'Behemoth name: ') %>
-      <%= form.text_field(:name) %> 
+      <%= form.text_field :name, class: 'form-control', placeholder: 'Mr. Behemoth' %> 
     </div>
 
-    <div class="row justify-content-center">
-      <%= form.label(:damage_type, 'Elemental Damage: ') %>
+    <div class="form-group">
+      <%= form.label(:damage_type, 'Elemental Damage: ') %> <br>
+      <div class="form-check">
+        <%= form.collection_check_boxes(:damage_type_ids, Element.all, :id, :name, {class: 'form-check-input', type: 'checkbox', style: ''}) %>
+      </div>
     </div>
 
-    <div class="checkbox">
-      <%= form.collection_check_boxes(:damage_type_ids, Element.all, :id, :name) %>
-    </div>
-
-    <div class="row justify-content-center">
-      <%= form.label(:weakness_type, 'Elemental Weakness: ') %>
-    </div>
-
-    <div class="row justify-content-center">
-      <%= form.collection_check_boxes(:weakness_type_ids, Element.all, :id, :name) %>
+    <div class="form-group">
+      <%= form.label(:weakness_type, 'Elemental Weakness: ') %> <br>
+      <div class='form-check'>
+        <%= form.collection_check_boxes(:weakness_type_ids, Element.all, :id, :name) %>
+      </div>
     </div>
    
-    <div class="row justify-content-center">
-      <%= form.label(:location_ids, 'Location(s) Found at: ') %>
-    </div>
-
-    <div class='row justify-content-center'>
+    <div class="form-group">
+      <%= form.label(:location_ids, 'Location(s) Found at: ') %> <br>
       <%= form.grouped_collection_select :location_ids, Location.where(parent_id: nil), :children, :name, :id, :name, {}, { multiple: true, :style => "width:450px;", class: "form-control"} %>
     </div>
 
-    <div class="row justify-content-center">
-      <%= form.label 'Logo' %>
-      <%= form.file_field :logo %>
+    <div class="form-group">
+      <%= form.label 'Logo:' %>
+      <%= form.file_field :logo, class: 'form-control-file'%>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+    <div class='row justify-content-center'>
+     <a class = 'btn btn-secondary btn-sm mr-1' href="<%=admin_behemoths_path%>" role=“button”> Back </a>
+     <button type=“submit” class='btn btn-primary btn-sm'> Submit </button>
+   </div>
 
-    <div class="row justify-content-center"> 
-      <%= link_to 'Back',admin_behemoths_path %>
-    </div>
   </div>
 <% end %>
 
