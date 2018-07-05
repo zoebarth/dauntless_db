@@ -11,6 +11,6 @@ class ArmorsController < ApplicationController
 
     def armor_params
       params.fetch(:armor, {}).permit(:name, :cell_slot_type, :base_armor, :elemental_resistance_amount, :elemental_weakness_amount, :perk_amount,
-        :elemental_weakness_id, :elemental_resistance_id, :perk_id)
+        :elemental_weakness_id, :elemental_resistance_id, :perk_id, :armor_type)
     end
 end
