@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Type</th>
         <th>Cell Slot</th>
         <th>Base Armor</th>
         <th>Elemental Resistance</th>
@@ -19,7 +20,8 @@
     <tbody>
       <% @armors.each do |armor| %>
       <tr>
-        <td> <%=armor.name %> </td>
+        <td> <%= armor.name %> </td>
+        <td> <%= armor.armor_type.capitalize %> </td>
         <td> <%= armor.cell_slot_type.capitalize %> </td>
         <td> <%= armor.base_armor %></td>
         <td> <%= armor.elemental_resistance.try(:name) %></td>

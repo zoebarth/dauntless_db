@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_29_145418) do
+ActiveRecord::Schema.define(version: 2018_07_05_201414) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_06_29_145418) do
     t.integer "elemental_resistance_id"
     t.integer "elemental_weakness_id"
     t.integer "perk_id"
+    t.integer "armor_type"
     t.index ["elemental_resistance_id"], name: "index_armors_on_elemental_resistance_id"
     t.index ["elemental_weakness_id"], name: "index_armors_on_elemental_weakness_id"
     t.index ["perk_id"], name: "index_armors_on_perk_id"
@@ -50,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_06_29_145418) do
 
   create_table "behemoths", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "location_id"
     t.index ["location_id"], name: "index_behemoths_on_location_id"
   end
