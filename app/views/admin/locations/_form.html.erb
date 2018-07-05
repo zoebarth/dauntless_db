@@ -9,26 +9,16 @@
       </ul>
     </div>
   <% end %>
-
   <div class="container">
-    <div class="row justify-content-center">
-      <%= form.label(:name, 'Locations name: ') %>
-      <%= form.text_field(:name) %> 
+    <div class="form-group">
+      <%= form.label(:name, "Location's name: ") %>
+      <%= form.text_field :name, class: 'form-control', placeholder: "New New York" %> 
     </div>
 
     <div class='row justify-content-center'>
-      <%= form.label(:parent, 'Choose a parent location, if any: ') %>
-      <%= form.collection_select :parent_id, Location.all.where('parent_id is null'), :id, :name, { prompt: 'Select one' }, {:multiple => false, :style => "width:450px;", class: "form-control"}%>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-
-    <div class="row justify-content-center"> 
-      <%= link_to 'Back',admin_locations_path %>
+      <a class = 'btn btn-secondary btn-sm mr-1 mt-2' href="<%=admin_locations_path%>" role=“button”> Back </a>
+      <button type='Submit' class='btn btn-primary btn-sm mt-2' >Submit</button>
     </div>
   </div>
-  
 <% end %>
 
