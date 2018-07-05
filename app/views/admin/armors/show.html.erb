@@ -3,6 +3,9 @@
 
   <h3> Armor name: <%= @armor.name %> </h3>
 
+  <h5> Armor Type:</h5>
+  <p>  <%= @armor.armor_type.capitalize %> </p>
+
   <h5> Cell Slot Type:</h5>
   <p>  <%= @armor.cell_slot_type.capitalize %> </p>
 
@@ -19,7 +22,6 @@
   <p>  <%= @armor.elemental_weakness.try(:name) %> </p>
 
   <h5> Elemental Weakness Amount: </h5>
-
   <p>  <%= @armor.elemental_weakness_amount %> </p> 
 
   <h5> Perk:</h5>
