@@ -28,7 +28,7 @@
             <td> <%= weapon.name %> </td>
             <td> <%= weapon.base_power %></td>
             <td> <%= weapon.max_power %></td>
-            <td> <%= weapon.elemental_power%></td>
+            <td> <%= weapon.elemental_power.try(:name)%></td>
             <td> <%= weapon.elemental_power_amount %></td>
             <td> <%= weapon.perk.try(:name)%></td>
             <td> <%= weapon.perk_amount %></td>

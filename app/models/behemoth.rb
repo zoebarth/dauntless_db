@@ -1,5 +1,5 @@
 class Behemoth < ApplicationRecord
-  has_and_belongs_to_many :location
+  has_and_belongs_to_many :locations 
   has_many :reagents
   has_many :elemental_damages
   has_many :damage_types, through: :elemental_damages, class_name: 'Element', source: :element

@@ -17,8 +17,7 @@
       font-size: 150%
   }
  
- .full{
-    
+ .behemoth_index{
     th{
       font-size: 160%;
       font-weight:bold;
@@ -26,10 +25,13 @@
     td{
       font-size: 135%;
     }
+    a{
+      color: white;
+      text-decoration: underline;
+    }
   }
 
   .armors_index{
-    
     th{
       font-size: 130%;
       font-weight:bold;
@@ -51,6 +53,21 @@
     td{
       font-size: 105%;
     }
+  }
+
+  .behemoth_detail{
+    h3{
+      color: white;
+      font-size: 400%; 
+      font-family: Impact; 
+    }
+
+    h5{
+      color: white;
+      font-size: 200%;
+      font-weight:bold;
+    }
+    
   }
 
 }

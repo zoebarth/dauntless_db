@@ -1,0 +1,50 @@
+<div class="container behemoth_detail">
+  <p id="notice">
+    <%= notice %>
+  </p>
+  <h3> Behemoth name: <%= @behemoth.name %> </h3>  
+  
+  <% if @behemoth.logo.attached? %>
+    <%= image_tag @behemoth.logo.variant(resize: "100x100") %>
+  <% end%>
+
+  <h5> Location Found: </h5>
+  <% @behemoth.location.each do |loc| %>
+    <p>  
+      <%= loc.name %>
+    </p>
+  <% end %>
+
+  <h5> Elemental Damage: </h5>
+  <% @behemoth.damage_types.each do |e| %>
+    <p> 
+      <% if e.avatar.attached? %>
+        <%= image_tag e.avatar.variant(resize: "25x25") %>
+      <% end %>
+      <%= e.name %> 
+    </p>
+  <% end %>
+
+  <h5> Elemental Weakness: </h5>
+  <% @behemoth.weakness_types.each do |e| %>
+    <p> 
+      <% if e.avatar.attached? %>
+        <%= image_tag e.avatar.variant(resize: "25x25") %>
+      <% end %>
+      <%= e.name %> 
+    </p>
+  <% end %>
+
+  <h5> Suggested Weapons: </h5>
+  <% @suggested_weapons.each do |w| %>
+    <p> <%= w.name %> </p>
+  <% end %>
+
+  <h5> Suggested Armor: </h5>
+  <% @suggested_armor.each do |a| %>
+    <p> <%= a.name %> </p>
+  <% end %>
+
+
+</div>
+
