@@ -10,20 +10,20 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-pills">
       <a class="navbar-brand" href="<%=admin_path%>"> Admin Pages</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <%= link_to ' Behemoths  ', admin_behemoths_path, class: "nav-item nav-link" %> 
-          <%= link_to ' Elements  ', admin_elements_path, class: "nav-item nav-link" %> 
-          <%= link_to ' Locations  ', admin_locations_path, class: "nav-item nav-link"%>
-          <%= link_to ' Perks  ', admin_perks_path, class: "nav-item nav-link" %>
-          <%= link_to ' Reagents  ', admin_reagents_path, class: "nav-item nav-link"%>
-          <%= link_to ' Weapons  ', admin_weapons_path, class: "nav-item nav-link"%>
-          <%= link_to ' Armors  ', admin_armors_path, class: "nav-item nav-link"%>
+          <%= nav_link ' Behemoths  ', admin_behemoths_path, 'admin/behemoths' %> 
+          <%= nav_link ' Elements  ', admin_elements_path, 'admin/elements' %> 
+          <%= nav_link ' Locations  ', admin_locations_path, 'admin/locations' %>
+          <%= nav_link ' Perks  ', admin_perks_path, 'admin/perks' %>
+          <%= nav_link ' Reagents  ', admin_reagents_path, 'admin/reagents' %>
+          <%= nav_link ' Weapons  ', admin_weapons_path, 'admin/weapons' %>
+          <%= nav_link ' Armors  ', admin_armors_path, 'admin/armors' %>
         </div>
       </div>
     </nav>
