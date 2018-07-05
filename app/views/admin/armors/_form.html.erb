@@ -16,6 +16,11 @@
   </div>
 
   <div class="form-group">
+    <%= form.label 'Armor Type: ' %>
+    <%= form.select :armor_type, Armor.armor_types.map { |k,v| [k.capitalize, k]}, {}, { class: "custom-select" } %>
+  </div>
+
+  <div class="form-group">
     <%= form.label 'Cell Slot Type: ' %>
     <%= form.select :cell_slot_type, Armor.cell_slot_types.map { |k,v| [k.capitalize, k]}, {}, { class: "custom-select" } %>
   </div>
