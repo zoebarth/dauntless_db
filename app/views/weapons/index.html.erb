@@ -34,7 +34,7 @@
             <td> <%= weapon.perk_amount %></td>
             <td> <%= weapon.cell_slot_type_one %> </td>
             <td> <%= weapon.cell_slot_type_two %> </td>
-            <% if weapon.unique_effect.length > 0 %>
+            <% if weapon.unique_effect.present? %>
               <td> Yes </td>
             <% else %>
               <td> No </td>
