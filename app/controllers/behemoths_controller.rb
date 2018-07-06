@@ -1,7 +1,7 @@
 class BehemothsController < ApplicationController
     
     def index
-      @behemoths = Behemoth.order(:name)
+      @behemoths = Behemoth.order(:name).includes(:weakness_types, :damage_types).with_attached_logo
     end
 
     def show 
