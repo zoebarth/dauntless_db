@@ -17,15 +17,11 @@
   <% end %>
   <h5> Location Found: </h5>
   <p>
-    <% if @behemoth.locations.blank? %>
       <% @behemoth.locations.each do |loc| %>
       <p>  
         <%= loc.name %>
       </p>
-      <% end %>  
-    <% else %>
-      <%= 'unknown (not in the database)' %>
-    <% end %>
+      <% end %>
   </p>
     <% if @behemoth.logo.attached? %>
       <%= image_tag @behemoth.logo.variant(resize: "100x100") %>
