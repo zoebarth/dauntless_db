@@ -1,5 +1,5 @@
 json.array! @weapons do |weapon|
-
+  json.id weapon.id
   json.name weapon.name
   json.weapon_type weapon.weapon_type
   json.base_power weapon.base_power
