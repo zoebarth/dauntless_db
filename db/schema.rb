@@ -51,8 +51,6 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
 
   create_table "behemoths", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "location_id"
     t.index ["location_id"], name: "index_behemoths_on_location_id"
   end
@@ -111,6 +109,14 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["behemoth_id"], name: "index_reagents_on_behemoth_id"
+  end
+
+  create_table "sublocations", force: :cascade do |t|
+    t.integer "location_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_sublocations_on_location_id"
   end
 
   create_table "weapons", force: :cascade do |t|
