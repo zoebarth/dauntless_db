@@ -113,7 +113,6 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
     t.index ["behemoth_id"], name: "index_reagents_on_behemoth_id"
   end
 
-
   create_table "weapons", force: :cascade do |t|
     t.string "name"
     t.integer "weapon_type"
