@@ -4,7 +4,7 @@ Element.find_or_create_by(name: 'Radiant')
 Element.find_or_create_by(name: 'Shock')
 Element.find_or_create_by(name: 'Umbral')
 
-20.times do 
+20.times do
   name = Faker::LeagueOfLegends.masteries
   perk = Perk.find_or_initialize_by(name: name)
   perk.desc = name
@@ -14,7 +14,7 @@ Element.find_or_create_by(name: 'Umbral')
   perk.save!
 end
 
-5.times do 
+5.times do
   Location.find_or_create_by(name: Faker::LordOfTheRings.location)
 end
 
@@ -65,6 +65,7 @@ Weapon.weapon_types.each do |wtype, _|
         perk: Perk.all.sample,
         perk_amount: rand(2) + 1,
         base_power: rand(30) + 10,
+        max_power: rand(40) + 50,
         cell_slot_type_one: Armor.cell_slot_types.keys.sample,
         cell_slot_type_two: Armor.cell_slot_types.keys.sample,
       }
