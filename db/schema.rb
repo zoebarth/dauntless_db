@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_05_201414) do
+ActiveRecord::Schema.define(version: 2019_03_08_154835) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -40,9 +43,9 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
     t.integer "elemental_resistance_amount"
     t.integer "elemental_weakness_amount"
     t.integer "perk_amount"
-    t.integer "elemental_resistance_id"
-    t.integer "elemental_weakness_id"
-    t.integer "perk_id"
+    t.bigint "elemental_resistance_id"
+    t.bigint "elemental_weakness_id"
+    t.bigint "perk_id"
     t.integer "armor_type"
     t.index ["elemental_resistance_id"], name: "index_armors_on_elemental_resistance_id"
     t.index ["elemental_weakness_id"], name: "index_armors_on_elemental_weakness_id"
@@ -53,26 +56,26 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "location_id"
+    t.bigint "location_id"
     t.index ["location_id"], name: "index_behemoths_on_location_id"
   end
 
   create_table "behemoths_locations", id: false, force: :cascade do |t|
-    t.integer "location_id", null: false
-    t.integer "behemoth_id", null: false
+    t.bigint "location_id", null: false
+    t.bigint "behemoth_id", null: false
     t.index ["location_id", "behemoth_id"], name: "index_behemoths_locations_on_location_id_and_behemoth_id"
   end
 
   create_table "elemental_damages", force: :cascade do |t|
-    t.integer "behemoth_id"
-    t.integer "element_id"
+    t.bigint "behemoth_id"
+    t.bigint "element_id"
     t.index ["behemoth_id"], name: "index_elemental_damages_on_behemoth_id"
     t.index ["element_id"], name: "index_elemental_damages_on_element_id"
   end
 
   create_table "elemental_weaknesses", force: :cascade do |t|
-    t.integer "behemoth_id"
-    t.integer "element_id"
+    t.bigint "behemoth_id"
+    t.bigint "element_id"
     t.index ["behemoth_id"], name: "index_elemental_weaknesses_on_behemoth_id"
     t.index ["element_id"], name: "index_elemental_weaknesses_on_element_id"
   end
@@ -87,8 +90,6 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "parent_id"
-    t.index ["parent_id"], name: "index_locations_on_parent_id"
   end
 
   create_table "perks", force: :cascade do |t|
@@ -107,20 +108,29 @@ ActiveRecord::Schema.define(version: 2018_07_05_201414) do
   create_table "reagents", force: :cascade do |t|
     t.string "name"
     t.integer "rarity"
-    t.integer "behemoth_id"
+    t.bigint "behemoth_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["behemoth_id"], name: "index_reagents_on_behemoth_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.date "arrive_date"
+    t.date "return_date"
+    t.text "destination"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "weapons", force: :cascade do |t|
     t.string "name"
     t.integer "weapon_type"
     t.integer "base_power"
-    t.integer "elemental_power_id"
+    t.bigint "elemental_power_id"
     t.integer "elemental_power_amount"
     t.integer "perk_amount"
-    t.integer "perk_id"
+    t.bigint "perk_id"
     t.integer "cell_slot_type_one"
     t.integer "cell_slot_type_two"
     t.string "unique_effect"
